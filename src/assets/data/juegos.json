@@ -511,6 +511,31 @@
         "https://play-lh.googleusercontent.com/screenshot2.jpg"
       ],
       "tags": ["MOBA", "Mobile", "5v5", "Estrategia"]
+    },
+    {
+      "id": 16,
+      "nombre": "half-life 2",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaxPyqi0iHqBR7BNDiH7-wa217wbIpgawso-TjQbbQTHeR9KqhfGoocjFYtj_WDwruh4sgj6vBsMljtNqTA8GGVVRo_UIt-8PQExbrVA",
+      "categoria": "FPS",
+      "desarrollador": "Valve corporation",
+      "fechaLanzamiento": "2004-11-16",
+      "descripcion": "Half-life es un juego de disparos en primera persona de 2004, desarrollado y publicado por Valve Corporation.",
+      "rating": 6,
+      "plataformas": ["PC", "Xbox","steam"],
+      "precio": 27
+    },
+    {
+      "id": 17,
+      "nombre": "block strike",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq6n950vt6wVa3WkjnM3UfmOvEekkq1oYhOw&s",
+      "categoria": "FPS",
+      "desarrollador": "Rexet Studio",
+      "fechaLanzamiento": "2023-10-28",
+      "descripcion": "Block Strike es un juego de acción de disparos en primera persona multijugador online.",
+      "rating": 4.9,
+      "plataformas": ["PC", "BlueStacks", "Mobile"],
+      "precio": 0
+      
     }
   ],
   "categorias": [
