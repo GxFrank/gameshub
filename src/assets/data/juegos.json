@@ -514,27 +514,25 @@
     },
     {
       "id": 16,
-      "nombre": "half-life 2",
-      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaxPyqi0iHqBR7BNDiH7-wa217wbIpgawso-TjQbbQTHeR9KqhfGoocjFYtj_WDwruh4sgj6vBsMljtNqTA8GGVVRo_UIt-8PQExbrVA",
-      "categoria": "FPS",
-      "desarrollador": "Valve corporation",
-      "fechaLanzamiento": "2004-11-16",
-      "descripcion": "Half-life es un juego de disparos en primera persona de 2004, desarrollado y publicado por Valve Corporation.",
-      "rating": 6,
-      "plataformas": ["PC", "Xbox","steam"],
-      "precio": 27
+      "nombre": "Gran Turismo 7",
+      "imagen": "https://i.ytimg.com/vi/6XPxqIL7AlQ/hqdefault.jpg",
+      "categoria": "Sports",
+      "desarrollador": "Polyphony Digital",
+      "rating": 4.5,
+      "plataformas": ["PC", "PlayStation"],
+      "precio": 69.99
     },
     {
       "id": 17,
-      "nombre": "block strike",
-      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq6n950vt6wVa3WkjnM3UfmOvEekkq1oYhOw&s",
-      "categoria": "FPS",
-      "desarrollador": "Rexet Studio",
+      "nombre": "The Legend of Zelda: BOTW",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ15_oUMTm8cyh34WU1LJOnDP5gS-EEjwQ_fQ&s",
+      "categoria": "adventure",
+      "desarrollador": "Nitendo EDP",
       "fechaLanzamiento": "2023-10-28",
       "descripcion": "Block Strike es un juego de acción de disparos en primera persona multijugador online.",
       "rating": 4.9,
-      "plataformas": ["PC", "BlueStacks", "Mobile"],
-      "precio": 0
+      "plataformas": ["Nintendo Switch"],
+      "precio": 59.99
       
     }
   ],
@@ -580,6 +578,13 @@
       "icono": "bi-trophy",
       "descripcion": "Juegos deportivos con simulación realista de diferentes disciplinas",
       "color": "#4ecdc4"
+    },
+    {
+      "id": "adventure",
+      "nombre": "Adventure",
+      "icono": "bi-compas",
+      "descripcion": "Juegos de aventuras y exploracion con narrativas epicas",
+      "color": "#9b59b6"
     }
   ]
 }
