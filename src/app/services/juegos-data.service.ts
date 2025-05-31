@@ -25,6 +25,7 @@ export class JuegosDataService {
     return this.juegos$;
   }
 
+
   obtenerJuegoPorId(id: number): Observable<Juego | undefined> {
     return this.juegos$.pipe(
       map(juegos => juegos.find(juego => juego.id === id))
@@ -86,4 +87,55 @@ export class JuegosDataService {
       )
     );
   }
+
+  // Método 1: getJuegosPorPrecio
+  getJuegosPorPrecio(min: number, max: number): Observable<Juego[]> {
+    return this.juegos$.pipe(map(juegos => 
+        juegos.filter(juego => typeof juego.precio === 'number' && 
+        juego.precio >= min && juego.precio <= max
+      ))
+    );
+  }
+
+  // Método 2: getEstadisticas
+  getEstadisticas(): Observable<{
+      totalJuegos: number,
+      juegosGratis: number,
+      juegosPago: number,
+      mejorRating: { nombre: string, rating: number } | null,
+      promedioPrecio: number
+    }> 
+  {
+    return this.juegos$.pipe(
+      map(juegos => {
+        let totalJuegos = juegos.length;
+        let juegosGratis = 0;
+        let juegosPago = 0;
+        let mejor: Juego | null = null;
+        let sumaPrecios = 0;
+        let cantidadPago = 0;
+
+        for (let juego of juegos) {
+          if (juego.esGratis) {
+            juegosGratis++;
+          } else {
+            juegosPago++;
+            if (typeof juego.precio === 'number') {
+              sumaPrecios += juego.precio;
+              cantidadPago++;
+            }
+          }
+          if (!mejor || juego.rating > mejor.rating) {
+            mejor = juego;
+          }
+        }
+
+        let mejorRating = mejor ? { nombre: mejor.nombre, rating: mejor.rating } : null;
+        let promedioPrecio = cantidadPago > 0 ? sumaPrecios / cantidadPago : 0;
+
+        return { totalJuegos,juegosGratis,juegosPago,mejorRating,promedioPrecio};
+      })
+    );
+  }
+
 }

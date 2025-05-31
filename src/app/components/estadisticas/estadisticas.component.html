@@ -1,0 +1,21 @@
+<ul class="list-group">
+  <li class="list-group-item">
+    <i class="bi bi-controller"></i>
+    Total de juegos en la plataforma: <b>{{ totalJuegos }}</b>
+  </li>
+  <li class="list-group-item">
+    <i class="bi bi-gift"></i>
+    Cantidad de juegos gratuitos vs de pago: 
+    <b>{{ juegosGratuitos }}</b> gratuitos / <b>{{ juegosPago }}</b> de pago
+  </li>
+  <li class="list-group-item">
+    <i class="bi bi-star-fill"></i>
+    Juego con mejor rating: 
+    <b>{{ mejorJuego?.nombre }}</b> ({{ mejorJuego?.rating | number:'1.1-2' }})
+  </li>
+  <li class="list-group-item">
+    <i class="bi bi-cash"></i>
+    Promedio de precios (solo juegos de pago): 
+    <b>{{ promedioPrecio | currency:'USD':'symbol':'1.2-2' }}</b>
+  </li>
+</ul>

@@ -1,19 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { Observable } from 'rxjs';
-import { CategoriasService } from '../../services/categorias.service';
+import { Component, OnInit, inject } from '@angular/core';
+import { CommonModule} from '@angular/common';
+import { JuegosDataService } from '../../services/juegos-data.service';
+import { Juego } from '../../interfaces/juego.interface';
 
 @Component({
-  selector: 'app-categorias',
+  selector: 'app-estadisticas',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './estadisticas.component.html',
-  styleUrl: './estadisticas.component.css'
-}) 
+  styleUrls: ['./estadisticas.component.css']
+})
+export class EstadisticasComponent implements OnInit {
+  private juegosService = inject(JuegosDataService);
 
-export class EstadisticasComponent{}
+  totalJuegos = 0;
+  juegosGratuitos = 0;
+  juegosPago = 0;
+  mejorJuego: Juego | null = null;
+  promedioPrecio = 0;
 
+  ngOnInit() {
+    this.juegosService.obtenerJuegos().subscribe(juegos => {
+      this.totalJuegos = juegos.length;
+      this.juegosGratuitos = juegos.filter(j => j.esGratis).length;
+      this.juegosPago = juegos.filter(j => !j.esGratis).length;
+      this.mejorJuego = juegos.reduce((max, j) => j.rating > (max?.rating ?? 0) ? j : max, null as any);
+      const juegosDePago = juegos.filter(j => !j.esGratis && typeof j.precio === 'number');
+      this.promedioPrecio = juegosDePago.length
+        ? juegosDePago.reduce((sum, j) => sum + (j.precio ?? 0), 0) / juegosDePago.length
+        : 0;
+    });
+  }
+}
 
 /*Respuesta  parte 4.1
 1. ¿En que archivo se define la interfaz de usuario?

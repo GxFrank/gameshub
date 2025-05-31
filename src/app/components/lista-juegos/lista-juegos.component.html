@@ -27,6 +27,17 @@
           </div>
         </div>
       </div>
+      <!-- Selector de ordenamiento -->
+      <div class="mb-3 mt-2">
+        <label for="ordenamiento" class="form-label">Ordenar por:</label>
+        <select id="ordenamiento" class="form-select" [(ngModel)]="ordenSeleccionada" (change)="ordenarJuegos()">
+          <option value="nombre-az">Nombre: A-Z</option>
+          <option value="nombre-za">Nombre: Z-A</option>
+          <option value="precio-menor-mayor">Precio: Menor a Mayor</option>
+          <option value="precio-mayor-menor">Precio: Mayor a Menor</option>
+          <option value="rating-mejor-peor">Rating: Mejor a Peor</option>
+        </select>
+      </div>
       <div class="col-lg-4 d-flex align-items-end justify-content-lg-end">
         <div class="results-info">
           <span class="badge-gaming secondary">

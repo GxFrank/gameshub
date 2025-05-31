@@ -1,0 +1,7 @@
+/* Selector de ordenamiento personalizado para fondo oscuro */
+#ordenamiento,
+#ordenamiento option,
+.form-label[for="ordenamiento"] {
+  background: #232946; 
+  color: #fff;
+}
